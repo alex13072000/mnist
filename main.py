@@ -13,12 +13,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 model = keras.Sequential([
     Dense(64, activation='sigmoid', input_shape=(784,)),
     Dense(32, 'sigmoid'),
-    Dense(16, 'sigmoid'),
+    Dense(14, 'relu'),
     Dense(10, 'sigmoid'),
 ])
 
 model.compile(
-    optimizer='adam',
+    optimizer='sgd',
     loss='sparse_categorical_crossentropy',
     metrics=['sparse_categorical_accuracy'],
 )
